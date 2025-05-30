@@ -1,0 +1,17 @@
+:root {
+  --background: #eee;
+  --foreground: #222;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #222;
+    --foreground: #eee;
+  }
+}
+
+html,
+body {
+  color: var(--foreground);
+  background: var(--background);
+}

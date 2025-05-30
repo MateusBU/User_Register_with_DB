@@ -1,0 +1,9 @@
+.title{
+    background-color: aqua;
+    color: black;
+    height: 100px;
+}
+
+.title h1{
+    margin: 0;
+}
