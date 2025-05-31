@@ -1,0 +1,28 @@
+.layout{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between; /*Each component at the extremity of the page*/
+    padding: 10px 20px;
+    background: linear-gradient(to right, black, aqua);
+}
+
+.header h1{
+    margin: 0;
+    font-size: 1.4em;
+}
+
+.header a{
+    background-color: crimson;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+.content{
+    padding: 25px;
+    height: 100%;
+}

@@ -1,4 +1,5 @@
 import styles from '../../styles/Stylish.module.css';
+import Layout from '@/components/Layout';
 import Link from 'next/link';
 
 //to use local css is necessary import the file and
@@ -6,11 +7,10 @@ import Link from 'next/link';
 
 export default function Stylish(){
     return (
-        <div>
+        <Layout title="CSS Example">
             <div className={styles.title}> 
-                <Link href="/">Return</Link>
                <h1>Style using CSS modules</h1>
             </div>
-        </div>
+        </Layout>
     );
 }
