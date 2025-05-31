@@ -1,3 +1,5 @@
+import Layout from '@/components/Layout';
+
 export default function Jsx(){
     const a = 1;
     const b = 3;
@@ -12,19 +14,21 @@ export default function Jsx(){
     }
 
     return(
-        <div>
-            <h1>JSX</h1>
-            a + b = {a + b}
-            <h2>
-                {Math.random()}
-            </h2>
-            <p>
-                {JSON.stringify(obj)}
-            </p>
-                {obj.name}
-                {obj.age}
-            {subtitle}
-            {subtitle2()}
-        </div>
+        <Layout title="Understanding JSX" color="#00ff48">
+            <div>
+                <h1>JSX</h1>
+                a + b = {a + b}
+                <h2>
+                    {Math.random()}
+                </h2>
+                <p>
+                    {JSON.stringify(obj)}
+                </p>
+                    {obj.name}
+                    {obj.age}
+                {subtitle}
+                {subtitle2()}
+            </div>
+        </Layout>
     )
 }

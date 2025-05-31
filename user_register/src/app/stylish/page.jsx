@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function Stylish(){
     return (
-        <Layout title="CSS Example">
+        <Layout title="CSS Example" color="aqua">
             <div className={styles.title}> 
                <h1>Style using CSS modules</h1>
             </div>

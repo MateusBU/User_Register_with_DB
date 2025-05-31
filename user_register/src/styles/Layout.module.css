@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between; /*Each component at the extremity of the page*/
     padding: 10px 20px;
-    background: linear-gradient(to right, black, aqua);
+    /* background: linear-gradient(to right, black, aqua);; */
 }
 
 .header h1{
@@ -24,5 +24,5 @@
 
 .content{
     padding: 25px;
-    height: 100%;
+    height: 100px;
 }
