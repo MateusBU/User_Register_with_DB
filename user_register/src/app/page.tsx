@@ -1,12 +1,16 @@
+import Layout from "../components/Layout";
 
 
 export default function Home() {
   return (
     <div className={`
       flex h-screen justify-center items-center
-      bg-gradient-to-r from-purple-500 to-blue-500
+      bg-gradient-to-r from-blue-500 to-purple-500
+      text-white
     `}>
-      <span className="text-4xl">Text</span>
+      <Layout title="Simple Register">
+        <span>Content</span>
+      </Layout>
     </div>
   );
 }
