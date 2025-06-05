@@ -1,3 +1,5 @@
+'use client'; 
+
 import Layout from "../components/Layout";
 import Table from "../components/Table";
 import Client from "../core/Client";
@@ -5,12 +7,23 @@ import Client from "../core/Client";
 
 export default function Home() {
 
-  const clients = [
-    new Client('Ana', 34, '1'),
-    new Client('Mateus', 30, '2'),
-    new Client('Carlos', 47, '3'),
-    new Client('Pedro', 19, '4'),
-  ]
+  const rawClients = [
+    { name: 'Ana', age: 34, id: '1' },
+    { name: 'Mateus', age: 30, id: '2' },
+    { name: 'Carlos', age: 47, id: '3' },
+    { name: 'Pedro', age: 19, id: '4' },
+  ];
+
+  // Convert to class instances
+  const clients = rawClients.map(c => new Client(c.name, c.age, c.id));
+
+  function clientSelected(client: Client) {
+    console.log(client);
+  }
+
+  function clientDeleted(client: Client) {
+    console.log(client);
+  }
 
   return (
     <div className={`
@@ -19,7 +32,7 @@ export default function Home() {
       text-white
     `}>
       <Layout title="Simple Register">
-        <Table clients={clients}></Table>
+        <Table clients={clients} clientSelected={clientSelected} clientDeleted={clientDeleted}></Table>
       </Layout>
     </div>
   );
