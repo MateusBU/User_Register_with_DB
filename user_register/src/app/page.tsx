@@ -1,7 +1,17 @@
 import Layout from "../components/Layout";
+import Table from "../components/Table";
+import Client from "../core/Client";
 
 
 export default function Home() {
+
+  const clients = [
+    new Client('Ana', 34, '1'),
+    new Client('Mateus', 30, '2'),
+    new Client('Carlos', 47, '3'),
+    new Client('Pedro', 19, '4'),
+  ]
+
   return (
     <div className={`
       flex h-screen justify-center items-center
@@ -9,7 +19,7 @@ export default function Home() {
       text-white
     `}>
       <Layout title="Simple Register">
-        <span>Content</span>
+        <Table clients={clients}></Table>
       </Layout>
     </div>
   );
