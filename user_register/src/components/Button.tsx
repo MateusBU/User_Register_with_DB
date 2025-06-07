@@ -3,7 +3,8 @@ import { console } from "node:inspector/promises"
 interface ButtonProps{
     color?: 'green' | 'blue' | 'gray',
     className?: string,
-    children: any
+    children: any,
+    onClick?: () => void //callback
 }
 
 export default function Button(props: ButtonProps){
@@ -23,7 +24,7 @@ export default function Button(props: ButtonProps){
     const gradientFrom = gradientColorsFrom[color] ?? 'to-gray-400';
     
     return(
-        <button className={`
+        <button onClick={props.onClick} className={`
             bg-gradient-to-r ${gradientFrom} ${gradientTo}
             text-white px-4 py-2 rounded-md 
             ${props.className}

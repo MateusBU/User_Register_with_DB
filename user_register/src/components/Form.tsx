@@ -4,7 +4,9 @@ import Input from "./Input";
 import Button from './Button';
 
 interface FormProps{
-    client?: Client
+    client: Client
+    clientChanged?: (client: Client) => void
+    canceled?: () => void
 }
 export default function Form(props: FormProps){
     const id = props.client?.id; // use ?, because the client may have no id
@@ -40,10 +42,10 @@ export default function Form(props: FormProps){
                 className="mb-4"
             />
             <div className='flex justify-end mt-7'>
-                <Button color='blue' className='mr-2 cursor-pointer'>
+                <Button color='blue' className='mr-2 cursor-pointer' onClick={() => props.clientChanged?.(new Client(name, +age, id))}>
                     {id ? 'Change': 'Save'}
                 </Button>
-                <Button color='gray' className='mr-2 cursor-pointer'>
+                <Button onClick={props.canceled} color='gray' className='mr-2 cursor-pointer'>
                     Cancel
                 </Button>
             </div>
