@@ -101,3 +101,4 @@ This section outlines common Next.js-related commands.
 ### Firebase:
 * Create a project at Firebase Console.
 * Create a Firestore Database. For this project, it was created a DB in `Test Mode`.
+* .env.locla: file is not commited, because contains important infos (apiKey, authDomain and projectId). It can be obtain in project configuration.
