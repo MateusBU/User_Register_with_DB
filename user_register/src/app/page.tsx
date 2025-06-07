@@ -10,6 +10,9 @@ import Client from "../core/Client";
 
 export default function Home() {
 
+  const [client, setClient] = useState<Client>(Client.empty()); //type Client
+  const [visible, setVisible] = useState<'table' | 'form'>('table'); //type table or form
+
   const rawClients = [
     { name: 'Ana', age: 34, id: '1' },
     { name: 'Mateus', age: 30, id: '2' },
@@ -21,7 +24,8 @@ export default function Home() {
   const clients = rawClients.map(c => new Client(c.name, c.age, c.id));
 
   function clientSelected(client: Client) {
-    console.log(client);
+    setClient(client);
+    setVisible('form');
   }
 
   function clientDeleted(client: Client) {
@@ -29,10 +33,15 @@ export default function Home() {
   }
 
   function saveClient(client: Client){
-    console.log(client)
+    console.log(client);
+    setVisible('table');
   }
 
-  const [visible, setVisible] = useState<'table' | 'form'>('table');
+  function newClient(){
+    setClient(Client.empty());
+    setVisible('form');
+  }
+
 
   return (
     <div className={`
@@ -44,14 +53,14 @@ export default function Home() {
         {visible === 'table' ?(
           <>
             <div className="flex justify-end">
-              <Button color="green" className="mb-4 cursor-pointer" onClick={() => setVisible('form')}>New Client</Button>
+              <Button color="green" className="mb-4 cursor-pointer" onClick={newClient}>New Client</Button>
             </div>
             <Table clients={clients} clientSelected={clientSelected} clientDeleted={clientDeleted}></Table>
           </>
 
         ): (
           <Form 
-            client={clients[0]}
+            client={client}
             clientChanged={saveClient}
             canceled={() => setVisible('table')}
           />
